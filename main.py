@@ -29,7 +29,7 @@ elif (st.session_state['second_message'] == False):
 
         #save to db
         pass
-        time.sleep(3) # Sleep for 3 seconds
+        time.sleep(2) # Sleep for 3 seconds
         response = "Is there anything else I should know about why you changed the employees' schedule that will help me make a better assignment in the future?"
         st.session_state['messages'].append({"role": "assistant", "content": response})
         st.chat_message("assistant").write(response)
@@ -41,6 +41,12 @@ elif ( st.session_state['final_message']== False):
         os.system('clear')
         st.chat_message("user").write(prompt)
         st.session_state['messages'].append({"role": "user", "content": prompt})
+        time.sleep(2) # Sleep for 3 seconds
+
+        response = "Thank you for your feedback."
+        st.session_state['messages'].append({"role": "assistant", "content": response})
+        st.chat_message("assistant").write(response)
+
         st.session_state['final_message'] = True
         #save to db
         pass
