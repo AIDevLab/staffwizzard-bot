@@ -14,7 +14,7 @@ def update_database(txt1, txt2):
   
   cursor = cnx.cursor()
   date=datetime.now()
-  query = f"INSERT INTO StaffwizzardLog(Date_Time, Input1, Input2)\
+  query = f"INSERT INTO StaffwizzardLog(Date_Time, Assistant, User)\
   VALUES('{date}', '{txt1}', '{txt2}')"
   cursor.execute(query)
   cnx.commit()
