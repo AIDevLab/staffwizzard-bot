@@ -5,7 +5,7 @@ def update_database(txt1, txt2):
   user='staffwizardmysqladmin'
   pwd='b5&8$smb7$J9BMKK'
   host='azmysql-staff-wizard-prd-01.mysql.database.azure.com'
-  db='mysql'
+  db='staffwizard'
   
   cnx = mysql.connector.connect(user=user, 
                               password=pwd,
