@@ -27,7 +27,8 @@ elif (st.session_state['second_message'] == False):
         os.system('clear')
         st.chat_message("user").write(prompt)
         st.session_state['messages'].append({"role": "user", "content": prompt})
-        
+
+        prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][0]['content']
         print(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
@@ -51,6 +52,7 @@ elif ( st.session_state['final_message']== False):
         st.chat_message("assistant").write(response)
 
         st.session_state['final_message'] = True
+        prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][2]['content'].replace("'", "")
         print(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
