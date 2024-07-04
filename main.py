@@ -27,8 +27,9 @@ elif (st.session_state['second_message'] == False):
         os.system('clear')
         st.chat_message("user").write(prompt)
         st.session_state['messages'].append({"role": "user", "content": prompt})
-
+        
         txt=st.session_state['messages'][0]['content']
+        print(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
         pass
         time.sleep(2) # Sleep for 3 seconds
@@ -51,5 +52,6 @@ elif ( st.session_state['final_message']== False):
 
         st.session_state['final_message'] = True
         txt=st.session_state['messages'][2]['content']
+        print(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
         pass
