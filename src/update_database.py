@@ -17,10 +17,8 @@ def update_database(txt1, txt2):
   date=str(datetime.now())
   query = f"INSERT INTO StaffwizzardLog(Date_Time, Assistant, User)\
   VALUES('{date}', '{txt1}', '{txt2}')"
-  st.sidebar.write(f"Executing the query: {query}")
   cursor.execute(query)
   cnx.commit()
-  st.sidebar.write("Changes commited")
   
   cursor.close()
   cnx.close()
