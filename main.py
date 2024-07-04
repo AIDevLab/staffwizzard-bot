@@ -30,6 +30,7 @@ elif (st.session_state['second_message'] == False):
 
         prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][0]['content']
+        print("test")
         print(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
         pass
