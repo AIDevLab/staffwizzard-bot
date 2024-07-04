@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import time 
+from src.update_database import *
 
 st.title("💬 Chatbot")
 if "messages" not in st.session_state:
@@ -27,7 +28,8 @@ elif (st.session_state['second_message'] == False):
         st.chat_message("user").write(prompt)
         st.session_state['messages'].append({"role": "user", "content": prompt})
 
-        #save to db
+        #txt1=st.session_state['messages'][0]['content']
+        #update_database(txt1, prompt)
         pass
         time.sleep(2) # Sleep for 3 seconds
         response = "Is there anything else I should know about why you changed the employee's schedule that will help me make a better assignment in the future?"
@@ -48,5 +50,6 @@ elif ( st.session_state['final_message']== False):
         st.chat_message("assistant").write(response)
 
         st.session_state['final_message'] = True
-        #save to db
+        #txt2=st.session_state['messages'][2]['content']
+        #update_database(txt1, prompt)
         pass
