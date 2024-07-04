@@ -51,7 +51,7 @@ elif ( st.session_state['final_message']== False):
         st.chat_message("assistant").write(response)
 
         st.session_state['final_message'] = True
-        txt=st.session_state['messages'][2]['content']
+        txt=st.session_state['messages'][2]['content'].replace("'", "")
         print(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
         pass
