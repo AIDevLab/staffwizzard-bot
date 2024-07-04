@@ -3,7 +3,6 @@ import os
 import time 
 from src.update_database import *
 
-
 st.title("💬 Chatbot")
 if "messages" not in st.session_state:
     st.session_state['messages'] = []
@@ -31,9 +30,9 @@ elif (st.session_state['second_message'] == False):
 
         prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][0]['content']
-        #print("test")
-        #print(f"Updating db with {txt} and {prompt}")
-        #update_database(txt1=txt, txt2=prompt)
+        print("test")
+        st.sidebar.write(f"Updating db with {txt} and {prompt}")
+        update_database(txt1=txt, txt2=prompt)
         pass
         time.sleep(2) # Sleep for 3 seconds
         response = "Is there anything else I should know about why you changed the employee's schedule that will help me make a better assignment in the future?"
