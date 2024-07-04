@@ -30,8 +30,7 @@ elif (st.session_state['second_message'] == False):
 
         prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][0]['content']
-        print("test")
-        st.sidebar.write(f"Updating db with {txt} and {prompt}")
+        #st.sidebar.write(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
         pass
         time.sleep(2) # Sleep for 3 seconds
@@ -55,6 +54,6 @@ elif ( st.session_state['final_message']== False):
         st.session_state['final_message'] = True
         prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][2]['content'].replace("'", "")
-        st.sidebar.write(f"Updating db with {txt} and {prompt}")
+        #st.sidebar.write(f"Updating db with {txt} and {prompt}")
         update_database(txt1=txt, txt2=prompt)
         pass
