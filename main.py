@@ -3,6 +3,7 @@ import os
 import time 
 from src.update_database import *
 
+
 st.title("💬 Chatbot")
 if "messages" not in st.session_state:
     st.session_state['messages'] = []
