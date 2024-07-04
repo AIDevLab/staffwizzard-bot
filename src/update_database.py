@@ -13,7 +13,7 @@ def update_database(txt1, txt2):
                               database=db)
   
   cursor = cnx.cursor()
-  date=datetime.now()
+  date=str(datetime.now())
   query = f"INSERT INTO StaffwizzardLog(Date_Time, Assistant, User)\
   VALUES('{date}', '{txt1}', '{txt2}')"
   cursor.execute(query)
