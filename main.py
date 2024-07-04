@@ -55,6 +55,6 @@ elif ( st.session_state['final_message']== False):
         st.session_state['final_message'] = True
         prompt=prompt.replace("'", "")
         txt=st.session_state['messages'][2]['content'].replace("'", "")
-        #print(f"Updating db with {txt} and {prompt}")
-        #update_database(txt1=txt, txt2=prompt)
+        st.sidebar.write(f"Updating db with {txt} and {prompt}")
+        update_database(txt1=txt, txt2=prompt)
         pass
